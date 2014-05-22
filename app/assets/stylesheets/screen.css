@@ -1,0 +1,52 @@
+body { 
+	margin: 0;
+}
+
+.head_title {
+	margin-left: 5%;
+	
+}
+
+h1 {
+	margin-left: 5%;
+	font-family: Helvetica;
+}
+
+p {
+	font-family: Arial;
+	margin-left: 10%;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	margin-bottom: 1em;
+	margin-left: 10%;
+	list-style: none;
+	font-family: Helvetica;
+}
+li {
+	margin-top: 1em;
+}
+
+
+ul a {
+	text-decoration: none;
+	color: gray;
+}
+
+ul a:hover {
+	color:black;
+}
+
+a {
+	font-family: Helvetica;
+	color: black;
+	margin-left: 5%;
+}
+
+.new_article {
+
+	padding: 2px;
+	margin-left: 5%;
+}
