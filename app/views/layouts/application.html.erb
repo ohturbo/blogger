@@ -7,12 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	
 	<% rand_num = rand(6) %>
 	<% if rand_num > 3 %>
-		<h1 class="head_title">Blogger</h1>
+		<h1 class="head_title"><%=link_to "Blogger", 																	   					  		 articles_path %> </h1>
 	<% else %>
-		<h1 class="head_title">Bloggah</h1>
+		<h1 class="head_title"><%=link_to "Bloggah",
+articles_path %></h1>
 	<% end %>
+	
+<p class="flash"><%= flash.notice %></p>
 	
 <%= yield %>
 
