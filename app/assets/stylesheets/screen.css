@@ -22,6 +22,10 @@ body {
 	font-size: .75em;
 }
 
+.timestamp {
+	font-size: .75em;
+}
+
 .flash {
 	color: red;
 }
@@ -50,7 +54,8 @@ li {
 
 ul a {
 	text-decoration: none;
-	color: gray;
+	color: #505050;
+	margin-left: 5%;
 }
 
 ul a:hover {

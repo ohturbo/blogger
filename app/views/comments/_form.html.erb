@@ -1,4 +1,9 @@
-<h3>Post a Comment</h3>
+
+<% if @article.comments.count == 0 %>
+	<h3>Be the First to Post a Comment</h3>
+<% else %>
+	<h3>Post a Comment</h3>
+<% end %>
 
 <%= form_for [ @article, @comment ] do |f| %>
   <p>
