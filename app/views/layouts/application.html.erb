@@ -8,17 +8,32 @@
 </head>
 <body>
 	
-	<% rand_num = rand(6) %>
-	<% if rand_num > 3 %>
-		<h1 class="head_title"><%=link_to "Blogger", 																	   					  		 articles_path %> </h1>
-	<% else %>
-		<h1 class="head_title"><%=link_to "Bloggah",
-articles_path %></h1>
-	<% end %>
 	
-<p class="flash"><%= flash.notice %></p>
 	
-<%= yield %>
+<div class="wrapper">
+
+	<div class="main_content">
+			<h1 class="head_title"><%=link_to "Blogger", 																	   					  		 articles_path %> </h1>
+
+	
+		<p class="flash"><%= flash.notice %></p>
+	
+	<%= yield %>
+
+	</div>
+
+	<div class="side_nav_wrapper">
+	
+		<ul class="side_nav">
+
+			<li><h3><%= link_to "Archive"%></h3></li>
+			
+
+		
+		</ul>
+	
+	</div>
+</div>
 
 </body>
 </html>

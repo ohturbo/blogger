@@ -1,32 +1,48 @@
-<h1 class="sub_title"><%= @article.title %></h1>
-<p>
-	
-	<!-- If an article has no tags, do not display tag list. -->
-	
-	<% if @article.tags.empty? %>
-	
-	<% else %>
-		Tags: 
-		<% @article.tags.each do |tag| %>
-			<%= link_to tag.name, tag_path(tag), class: "tag" %>
+<div class="article_wrapper">
+	<h1 class="sub_title"><%= @article.title %></h1>
+	<p>
+
+		<!-- If an article has no tags, do not display tag list. -->
+
+		<% if @article.tags.empty? %>
+
+		<% else %>
+			Tags: 
+			<% @article.tags.each do |tag| %>
+				<%= link_to tag.name, tag_path(tag), class: "tag" %>
+			<% end %>
 		<% end %>
+	</p>
+
+	<% if @article.image.exists? %>
+		<p><%= image_tag @article.image.url %></p>
 	<% end %>
-</p>
 
-<% if @article.image.exists? %>
-<p><%= image_tag @article.image.url %></p>
-<% end %>
-
-<p><%= @article.body %></p>
+	<p class="article_body"><%= @article.body %></p>
 
 
-<%= link_to "Back to Articles List", articles_path, class: "article_control" %>
+	<%= link_to "Back to Articles List", articles_path, 
+										 class: "article_control" %>
 
-<%= link_to "Edit Article", edit_article_path(@article), class: "article_control" %>
+	<%= link_to "Edit Article", edit_article_path(@article), 
+								class: "article_control" %>
 
-<%= link_to "Delete Article", article_path(@article), method: :delete, data: {confirm: "Are you sure?"}, class: "article_control" %>
+	<%= link_to "Delete Article", 
+				article_path(@article), 
+				method: :delete, 
+				data: {confirm: "Are you sure?"}, 
+				class: "article_control" %>
 
-<h3>Comments (<%= @article.comments.count %>)</h3>
-<%= render partial: 'articles/comment', collection: @article.comments %>
+	<p class="view_count"><%= @article.view_count %> views</p>
 
-<%= render partial: 'comments/form' %>
+	<h3 class="comments_show">Show Comments</h3>
+
+	<div class="comments">
+
+		<h3>Comments (<%= @article.comments.count %>)</h3>
+		<%= render partial: 'articles/comment', collection: @article.comments %>
+
+		<%= render partial: 'comments/form' %>
+
+	</div>
+</div>

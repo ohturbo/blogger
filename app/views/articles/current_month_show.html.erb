@@ -1,0 +1,5 @@
+<h1>Articles for <%= DateTime.now.strftime("%B")%></h1>
+
+<% @articles do |a| %>
+	<li><%=a.title %></li>
+<% end %>

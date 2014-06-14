@@ -1,13 +1,18 @@
 <h1 class="sub_title">All Articles</h1>
 
-<ul id="articles">
-	<% @articles.each do |article| %>
-		<li>
-			<%= link_to article.title, article_path(article) %>
-		</li>
+<ul class="articles">
+	<% @articles_by_month.sort.reverse.each do |monthname, article| %>
+	<li><h3 class="monthname"><%= monthname.strftime("%B %Y") %></h3></li>
+
+	 	<% article.each do |article| %>
+			<li><p><%= link_to article.title, article_path(article) %></p></li>
+	 	<% end %>
+
 	<% end %>
 	
 </ul>
+
+
 
 <%= link_to "New Article",
  			new_article_path,
