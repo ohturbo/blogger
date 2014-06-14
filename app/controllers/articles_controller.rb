@@ -7,6 +7,9 @@ class ArticlesController < ApplicationController
     @articles_by_month = @articles.group_by {
        |a| a.created_at.beginning_of_month
        }
+       
+    @top_articles = Article.all.order(:view_count).reverse.first(3)
+    @bottom_articles = Article.all.order(:view_count).first(3)
   end
   
   def show
@@ -18,6 +21,8 @@ class ArticlesController < ApplicationController
     @view_count = @article.view_count
     @article.view_count += 1
     @article.save
+    
+
   end
   
   def new

@@ -1,8 +1,7 @@
 <h1 class="sub_title">All Articles</h1>
-
 <ul class="articles">
 	<% @articles_by_month.sort.reverse.each do |monthname, article| %>
-	<li><h3 class="monthname"><%= monthname.strftime("%B %Y") %></h3></li>
+	<li><h2 class="monthname"><%= monthname.strftime("%B %Y") %></h2></li>
 
 	 	<% article.each do |article| %>
 			<li><p><%= link_to article.title, article_path(article) %></p></li>
@@ -14,9 +13,30 @@
 
 
 
-<%= link_to "New Article",
- 			new_article_path,
- 			class: 'new_article'%>
+<div class="pop_article_wrapper">
+	<h2 class="sub_title">Popular Articles</h1>
+	<ul class="popular_articles">
 	
-<%= link_to "All Tags",
-			tags_path%>
+		<% @top_articles.each do |article| %>
+		
+			<li><%= link_to article.title, article_path(article) %></li>
+			
+		<% end %>
+	</ul> 
+</div>
+<div class="pop_article_wrapper">
+	<h2 class="sub_title">Unpopular Articles</h1>
+	<ul class="popular_articles">
+	
+		<% @bottom_articles.each do |article| %>
+		
+			<li><%= link_to article.title, article_path(article) %></li>
+			
+		<% end %>
+	</ul> 
+</div>
+
+
+
+
+
