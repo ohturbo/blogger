@@ -1,16 +1,18 @@
 body { 
 	margin: 0;
-	margin-left: 1em;
 }
 .article_wrapper {
-	width: 30em;
+	width: 45em;
 	float: left;
 	display: inline-block;
 }
 
 .pop_article_wrapper {
-	float: left;
-	width: 40%;
+	float: right;
+	width: 30%;
+	background-color: black;
+	border-radius: 15px;
+	padding: 1em;
 }
 
 .head_title a {
@@ -19,7 +21,7 @@ body {
 }
 
 .head_title {
-	margin: 0 ;
+	margin: 1em auto ;
 }
 
 .tag {
@@ -29,6 +31,7 @@ body {
 	padding: 1px;
 	font-size: .75em;
 }
+
 
 .delete {
 	font-size:.75em;
@@ -46,6 +49,13 @@ body {
 	font-family: Arial;
 	font-weight: normal;
 	font-size: 1em;
+	margin-left: 1em;
+}
+
+#article_body {
+	width: 40em;
+	resize: none;
+	height: 15em;
 }
 
 
@@ -82,20 +92,21 @@ p {
 
 ul {
 	padding: 0;
-	margin: 0;
+	margin-top: 0px;
 	margin-bottom: 1em;
 	list-style: none;
 	font-family: Helvetica;
 }
 
 li {
-	margin-top: 1em;
+	margin-top: 0px;
 	margin-bottom: 1em;
 }
 
 .articles {
 	float: left;
 	width: 60%;
+	margin-right: 1em;
 }
 
 li a {
@@ -105,6 +116,15 @@ li a {
 
 .articles li a {
 	margin-left: 1em;
+}
+
+.popular_articles {
+	margin-left: 1em;
+}
+
+.popular_articles a:hover {
+	color: white;
+	
 }
 
 .monthname {
@@ -122,43 +142,43 @@ a {
 	margin-right: 1em;
 }
 
-.new_article {
-	padding: 2px;
-}
-
 .wrapper {
 	min-width: 50em;
 }
 
-.side_nav_wrapper {
+.top_nav_wrapper {
 	color: gray;
-	width: 7em;
-	height: 20em;
-	margin: 2em auto;
-	float: left;
-	border-right: .1em solid black;
-	padding-right: .9em;
-	padding-top: 6em;
-	display: inline-block;
+	width: 100%;
+	height: 2.5em;
+	margin: 0 auto;
+	float: top;
+	position: fixed;
+	background-color: black;
 }
 
-.side_nav li a {
+.top_nav li {
+	margin-left: 6.3em;
+}
+.top_nav li a {
+	margin-top: 0;
+	float: left;
 	color: gray;
 	text-decoration: none;
 	list-style: none;
 }
 
-.side_nav li a:hover {
-	color: black;
+.top_nav li a:hover {
+	color: white;
 }
 
 .main_content {
 	margin-top: 1em;
+	margin-left: 5em;
+	margin-right: 5em;
 	display: inline-block;
 	padding-left: 1em;
 	padding-bottom: 1em;
 	display: inline-block;
-	width: 70%;
 	height: 50em;
 }
 

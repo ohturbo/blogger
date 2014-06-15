@@ -7,7 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="top_nav_wrapper">
 	
+		<ul class="top_nav">
+
+			<li><%= link_to "New Article",
+			 			new_article_path,
+			 			class: 'new_article'%></li>
+
+						<li><%= link_to "All Tags",
+						tags_path%></li>
+			
+		</ul>
+	
+	</div>
 	
 	
 <div class="wrapper">
@@ -22,20 +35,7 @@
 
 	</div>
 
-	<div class="side_nav_wrapper">
 	
-		<ul class="side_nav">
-
-			<li><%= link_to "New Article",
-			 			new_article_path,
-			 			class: 'new_article'%></li>
-
-						<li><%= link_to "All Tags",
-						tags_path%></li>
-			
-		</ul>
-	
-	</div>
 </div>
 
 </body>
